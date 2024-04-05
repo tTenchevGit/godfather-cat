@@ -1,0 +1,298 @@
+body, html {
+  /* background-color: black; */
+    height: 100%;
+    padding-top: 70px;
+    margin: 0;
+    background: url('the_catfather_by_jprodriguees_daums62-fullview.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+
+
+  
+  .navbar {
+   
+    flex-wrap: wrap; /* Allows items to wrap onto the next line as needed */
+    justify-content: center; /* Centers the buttons within the navbar */
+    gap: 10px; /* Adds some space between the buttons */
+    padding: 10px 0; /* Padding to ensure there's space around the buttons */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .nav-btn {
+    /* background: transparent;
+    border: none; 
+    color: #00FF00;
+    padding: 10px;
+    cursor: pointer; */
+    padding: 10px 20px;
+  margin: 0 10px; /* Space between buttons */
+  border: 0.5px solid #ff3333; /* Starting border color, light green */
+  background-color: #ff3333; /* Initial background */
+  color: #ff3333; /* Text color, light green */
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s ease; /* Smooth transition for effects */
+  cursor: pointer;
+  outline: none;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  
+  }
+
+  .content {
+    margin-top: 60px; /* Add a top margin to avoid content being hidden behind the navbar */
+    padding: 20px; /* Some padding */
+    height: 2000px; /* Just to make sure there's enough content to scroll */
+}
+  
+  @keyframes neon-fire-flicker {
+    0%, 100% {
+      text-shadow:
+        0 0 6px #ff3333,
+        0 0 10px #ff3333,
+        0 0 14px #ff7733,
+        0 0 20px #ff5511,
+        0 0 30px #ff2200,
+        0 0 40px #ff2200;
+    }
+    
+    50% {
+      text-shadow:
+        0 0 8px #ff3333,
+        0 0 12px #ff7733,
+        0 0 18px #ff5511,
+        0 0 24px #ff2200,
+        0 0 34px #ff2200,
+        0 0 44px #ff2200;
+    }
+  }
+  
+  .nav-btn:hover, .nav-btn.neon-effect {
+    animation: neon-fire-flicker 0.2s infinite alternate;
+    background: linear-gradient(45deg, #ff3333, #ff7733, #ff5511); /* Red/orange gradient */
+    box-shadow: 
+      0 0 4px #ff3333,
+      0 0 10px #ff7733,
+      0 0 20px #ff5511,
+      0 0 40px #ff2200,
+      0 0 60px #ff2200,
+      0 0 80px #ff2200,
+      0 0 100px #ff2200,
+      0 0 150px #ff2200;
+      
+    color: #fff; /* White text to contrast with the fiery effect */
+  }
+  
+  
+  .section {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+    padding: 20px; 
+    box-sizing: border-box;
+  }
+
+ 
+  
+  @media (max-width: 768px) {
+   
+    .nav-btn {
+      padding: 10px 15px; /* Smaller padding for mobile */
+      font-size: 8px; 
+    }
+
+    .section {
+        /* Stack the image and text/button vertically on small screens */
+        flex-direction: column;
+      }
+
+      .section .section-image, 
+      .section .content {
+        order: -1; /* This will ensure the image always comes first */
+        width: 100%; /* Adjust width to fit small screens */
+      }
+
+      .section .content {
+        text-align: center; /* Center the text if desired */
+      }
+
+      .hidden-text {
+        max-width: 100%;
+        max-height: 150px; /* Allow the text to fill the width on small screens */
+        /* ... */
+      }
+  }
+
+  
+   
+
+  .spin-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .hidden-text {
+    font-size: 30px;
+    display: none;
+    max-width: 400px;
+    max-height: 200px; 
+    margin: 20px; /* Center the text block if there's space on the sides */
+    padding: 20px; /* Add padding around the text */
+    box-sizing: border-box; /* Padding is included in the width calculation */
+    word-wrap: break-word; /* Ensures that long words will break and wrap onto the next line */
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background: -webkit-linear-gradient(#ff7733, #ff3333); /* For Safari 5.1 to 6.0 */
+    background: linear-gradient(#ff7733, #ff3333); /* Standard syntax */
+    -webkit-background-clip: text; /* For Safari */
+    background-clip: text; /* Standard syntax */
+    -webkit-text-fill-color: transparent; /* For Safari */
+    color: transparent; /* Fallback for browsers that do not support text-fill-color */
+    
+  }
+  
+  /* Add styles for spinning button and other effects */
+  /* Fixed background, navbar, and section styling as previously defined */
+
+/* Spinning button animation */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  .spin-btn {
+    animation: spin infinite 10s linear;
+  }
+  
+  /* Style for when the button is clicked */
+  .spin-btn.active {
+    background-color: #ff3333; /* Neon green */
+  }
+  
+  /* Additional CSS for alternating sections' layout */
+  .section:nth-child(even) .content {
+    order: -1; /* Swap image and text/button for even sections */
+  }
+  
+ 
+  
+  .spin-btn {
+    border: 2px solid #ff3333; 
+    width: 140px; /* Size of the button */
+    height: 135px; /* Size of the button */
+    border-radius: 50%; /* Makes it circular */
+    background-color: transparent; /* Transparent background */
+    border: none; /* No border */
+    cursor: pointer; /* Cursor pointer on hover */
+    outline: none; /* No outline */
+    padding: 0; /* No padding */
+    overflow: hidden; /* Prevents content from spilling out */
+    position: relative; /* To position the image */
+    opacity: 1;
+  }
+  
+  .spin-btn .btn-icon {
+    width: 100%; /* Full width of the button */
+    height: 100%; /* Full height of the button */
+    border-radius: 50%; /* Makes the image circular */
+    transition: transform 0.5s; /* Smooth transition for spinning */
+    position: absolute; /* Position it within the button */
+    top: 0;
+    left: 0;
+    border-color: #ff7733;
+  }
+  
+  .spin-btn:hover{
+    box-shadow:  0 0 4px #ff3333,
+    0 0 100px #ff7733,
+    0 0 200px #ff5511,
+    0 0 400px #ff2200,
+    0 0 600px #ff2200,
+    0 0 800px #ff2200,
+    0 0 1000px #ff2200,
+    0 0 1500px #ff2200;
+    border-color: #ff7733;
+  }
+
+  .spin-btn:hover .btn-icon, .spin-btn:active .btn-icon {
+    /* Spin effect on hover/click */
+    transform: rotate(360deg);
+   
+  }
+  
+  /* Neon effect when button is clicked */
+  .spin-btn:active {
+    box-shadow:  0 0 100px #ff7733,
+    0 0 200px #ff5511,
+    0 0 400px #ff2200,
+    0 0 600px #ff2200,
+    0 0 800px #ff2200,
+    0 0 1000px #ff2200,
+    0 0 1500px #ff2200;
+  }
+  
+
+  
+  .social-media-icons {
+    display: flex;
+    justify-content: space-around; /* Distribute icons evenly */
+    flex-wrap: wrap; /* Allow icons to wrap onto the next line as screen size decreases */
+    padding: 20px; /* Add some padding around the entire container */
+    margin-bottom: 60px;
+  }
+  
+  .icon-link {
+    display: inline-flex; /* Make the link behave like a flex item */
+    justify-content: center; /* Center the icon inside the link */
+    width: 110px; /* Set a fixed width for the icons */
+    height: 110px; /* Set a fixed height for the icons */
+    border-radius: 50%; /* Makes the links circular */
+    overflow: hidden; /* Ensures nothing spills outside the circular shape */
+    transition: transform 0.5s ease; /* Smooth transition for spinning */
+  }
+  
+  .social-icon {
+    width: 100%; /* Make the icon fill the link element */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.5s ease; /* Smooth transition for spinning */
+  }
+  
+  .icon-link:hover{
+    box-shadow:  0 0 100px #ff7733,
+    0 0 200px #ff5511,
+    0 0 400px #ff2200,
+    0 0 600px #ff2200,
+    0 0 800px #ff2200,
+    0 0 1000px #ff2200,
+    0 0 1500px #ff2200;
+  }
+
+  .icon-link:hover .social-icon {
+    transform: rotate(360deg); /* Spin the icon on hover */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .social-media-icons {
+      justify-content: center; /* Center icons in smaller screens */
+      gap: 20px; /* Add gaps between icons */
+    }
+    
+    .icon-link {
+      margin-bottom: 20px; /* Add some margin to the bottom for when they wrap */
+      width: 100px; /* Even larger size for smaller screens if needed */
+    height: 100px;
+    }
+  }
+  

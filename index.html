@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catfather</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="navbar">
+  <button class="nav-btn" onclick="scrollToSection('section1')">Catfather</button>
+  <button class="nav-btn" onclick="scrollToSection('section2')">Catfather</button>
+  <button class="nav-btn" onclick="scrollToSection('section3')">Catfather</button>
+  <button class="nav-btn" onclick="scrollToSection('section4')">Catfather</button>
+  <button class="nav-btn" onclick="scrollToSection('section5')">Catfather</button>
+  <button class="nav-btn" onclick="scrollToSection('social')">SOCIAL</button>
+  <button class="nav-btn" onclick="toggleAudio()">Soundtrack</button>
+  <!-- Add more buttons for each section as needed -->
+</div>
+
+<!-- Navbar for navigation -->
+
+<audio id="myAudio" class="content"  loop>
+  <source src="sn.mp3" type="audio/mp3">
+
+</audio>
+
+
+  
+  <!-- Section 1 -->
+  <div id="section1" class="section">
+    <img src="Screenshot 2024-04-01 091404.jpg" alt="Right Image" class="section-image right">
+    <div class="content right">
+      <button  class="spin-btn" onclick="toggleText(1)">
+        <img src="spin.jpg" alt="Icon" class="btn-icon">
+    </button>
+      <div class="hidden-text" id="hidden-text-1">I'm gonna make him an offer he can't refuse.</div>
+    </div>
+  </div>
+  
+  <!-- Section 2 -->
+  <div id="section2" class="section">
+    <img src="images.png" alt="Left Image" class="section-image left">
+    <div class="content right">
+      <button  class="spin-btn" onclick="toggleText(2)"> 
+        <img src="spin.jpg" alt="Icon" class="btn-icon">
+    </button>
+      <div class="hidden-text" id="hidden-text-2">More info...</div>
+    </div>
+  </div>
+  
+  <!-- Additional sections follow the same pattern -->
+  <!-- Section 1 -->
+  <div id="section3" class="section">
+    <img src="51yzyt.jpg" alt="Right Image" class="section-image right">
+    <div class="content right">
+      <button  class="spin-btn" onclick="toggleText(3)">
+        <img src="spin.jpg" alt="Icon" class="btn-icon">
+    </button>
+      <div class="hidden-text" id="hidden-text-3">Lorem ipsum dolor, sit amet consecteturlorem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem ut necessitatibus consequuntur porro nisi non cum laudantium nostrum molestias, vitae tempora tempore debitis deleniti inventore cumque, aliquam optio alias recusandae? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, iure ipsam odit nobis quo excepturi, sit perspiciatis tempore quisquam modi et doloribus placeat dolores totam. Mollitia ea similique saepe tempora. adipisicing elit. Iure quis hic vero! Ratione Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptatem molestiae aut dolor ex e</div>
+    </div>
+  </div>
+  
+  <!-- Section 2 -->
+  <div id="section4" class="section">
+    <img src="5.jpg" alt="Left Image" class="section-image left">
+    <div class="content right">
+      <button  class="spin-btn" onclick="toggleText(4)"> 
+        <img src="spin.jpg" alt="Icon" class="btn-icon">
+    </button>
+      <div class="hidden-text" id="hidden-text-4">More info...</div>
+    </div>
+  </div>
+
+  <!-- Section 1 -->
+  <div id="section5" class="section">
+    <img src="Untitled.jpg" alt="Right Image" class="section-image right">
+    <div class="content right">
+      <button  class="spin-btn" onclick="toggleText(5)">
+        <img src="spin.jpg" alt="Icon" class="btn-icon">
+    </button>
+      <div class="hidden-text" id="hidden-text-5">Lorem ipsum dolor, sit amet consecteturlorem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem ut necessitatibus consequuntur porro nisi non cum laudantium nostrum molestias, vitae tempora tempore debitis deleniti inventore cumque, aliquam optio alias recusandae? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, iure ipsam odit nobis quo excepturi, sit perspiciatis tempore quisquam modi et doloribus placeat dolores totam. Mollitia ea similique saepe tempora. adipisicing elit. Iure quis hic vero! Ratione Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptatem molestiae aut dolor ex e</div>
+    </div>
+  </div>
+  
+  <!-- Section 2 -->
+  <!-- <div>
+   
+    <img src="photo_2024-04-01_05-40-55.jpg" alt="Left Image" class="section-image left">
+    <div class="content right">
+      <button  class="spin-btn" onclick="toggleText(6)"> 
+        <img src="mushbut.jpg" alt="Icon" class="btn-icon">
+    </button>
+      <div class="hidden-text" id="hidden-text-6">More info...</div>
+    </div>
+  </div> -->
+
+<!-- Add more sections as needed -->
+<div class="social-media-icons" id="social">
+    <a href="your-twitter-link" class="icon-link"><img src="twiter.jpg" alt="Twitter" class="social-icon"></a>
+    <a href="https://www.pump.fun/board" class="icon-link"><img src="push.png" alt="push" class="social-icon"></a>
+    <a href="https://dexscreener.com/" class="icon-link"><img src="dex.png" alt="dex" class="social-icon"></a>
+    <a href="your-linkedin-link" class="icon-link"><img src="telegram.png" alt="tele" class="social-icon"></a>
+  </div>
+  
+
+<script src="script.js"></script>
+<script>
+document.querySelectorAll('.nav-btn').forEach(button => {
+    button.addEventListener('click', function() {
+      // Toggle the neon-effect class on click
+      this.classList.toggle('neon-effect');
+
+      setTimeout(() => {
+      this.classList.remove('neon-effect');
+    }, 1500);
+    });
+  });
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      var audio = document.getElementById('myAudio');
+      audio.muted = true; // Start the audio muted to comply with browser policies
+      audio.play().catch(error => console.error("Audio play failed:", error));
+  });
+  
+  function toggleAudio() {
+      var audio = document.getElementById('myAudio');
+      audio.muted = !audio.muted;
+  }
+  </script>
+
+  
+
+  
+
+</body>
+</html>
